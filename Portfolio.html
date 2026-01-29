@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidushi Tayal | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f9f7f4;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f2e9dc, #e6d5c3);
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #5a4a3f;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #c2a57a;
+      display: block;
+      margin-top: 8px;
+    }
+
+    .about p {
+      max-width: 800px;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #6a4f2c;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #2b2b2b;
+      color: #f9f7f4;
+      text-align: center;
+      padding: 25px 10%;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vidushi Tayal</h1>
+    <p>Aspiring Computer Science Engineer | Content Creator | Tech Enthusiast</p>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I am an undergraduate Computer Science engineering student with a strong academic and analytical background. 
+      Growing up in an engineering-focused environment, I have developed a deep interest in technology, problem-solving, 
+      and building structured, real-world solutions through code and teamwork.
+    </p>
+  </section>
+
+  <section>
+    <h2>College</h2>
+    <div class="card">
+      <h3>Symbiosis Institute of Technology, Nagpur</h3>
+      <p><strong>Degree:</strong> Bachelor of Technology (B.Tech)</p>
+      <p><strong>Year:</strong> 1st Year — 2nd Semester</p>
+      <p><strong>Focus Areas:</strong> Data Structures & Algorithms using C and C++, Python Programming</p>
+      <p>
+        Currently building a strong foundation in core computer science concepts with hands-on practice in
+        problem-solving, algorithmic thinking, and structured programming. Emphasis on writing efficient code
+        and understanding real-world applications of data structures.
+      </p>
+    </div>
+  </section>
+
+  
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Programming</h3>
+        <ul>
+          <li>• C Programming</li>
+          <li>• Data Structures (Basics)</li>
+          <li>• Python (Beginner–Intermediate)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tools & Platforms</h3>
+        <ul>
+          <li>• Canva (Design & Posters)</li>
+          <li>• HTML & CSS (Basics)</li>
+          <li>• Git & IDEs (Learning)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects & Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>UrbanPulse – Startup Simulation</h3>
+        <p>
+          Led a team of eight as CEO in a startup simulation project. Responsible for ideation, team coordination, 
+          and pitching the business concept to faculty.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Academic Coding Projects</h3>
+        <p>
+          Worked on multiple C programming assignments including sorting algorithms, pattern problems, 
+          and logical problem-solving tasks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section>
+    <h2>Interests</h2>
+    <div class="grid">
+      <div class="card">
+        <ul>
+          <li>• Technology & Innovation</li>
+          <li>• Storytelling & Writing</li>
+          <li>• Fitness & Morning Gym Routines</li>
+          <li>• Interior Design & Aesthetics</li>
+          <li>• Travel (Japan Aspirant 🇯🇵)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Vidushi Tayal | Designed with clarity & warmth</p>
+  </footer>
+
+</body>
+</html>
