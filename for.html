@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Event Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f7f7f7, #e2e8f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        .header img {
+            width: 80px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Form */
+        form {
+            padding: 30px 40px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2a5298;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-weight: 400;
+            color: #2c3e50;
+        }
+
+        button {
+            background: #2a5298;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        /* Footer Note */
+        .footer-note {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media(max-width: 600px){
+            form {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Symbiosis_International_University_logo.png" alt="SIT Logo">
+        <h1>Symbiosis Institute of Technology</h1>
+        <p>Event Registration Form</p>
+    </div>
+
+    <!-- Form -->
+    <form action="#" method="POST">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="collegeid">College ID / Roll Number</label>
+        <input type="text" id="collegeid" name="collegeid" placeholder="Enter your College ID / Roll Number" required>
+
+        <label for="course">Course / Branch</label>
+        <input type="text" id="course" name="course" placeholder="Enter your branch/course" required>
+
+        <label for="year">Year of Study</label>
+        <select id="year" name="year" required>
+            <option value="">Select Year</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+        </select>
+
+        <label>Participation Type</label>
+        <div class="radio-group">
+            <label><input type="radio" name="participation" value="Individual" required> Individual</label>
+            <label><input type="radio" name="participation" value="Team"> Team</label>
+        </div>
+
+        <label for="team">Team Members (if any)</label>
+        <textarea id="team" name="team" placeholder="Enter team members separated by comma"></textarea>
+
+        <label for="event">Event Category / Track</label>
+        <input type="text" id="event" name="event" placeholder="Enter the event category or track" required>
+
+        <label for="tshirt">T-shirt Size</label>
+        <select id="tshirt" name="tshirt">
+            <option value="">Select Size</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+        </select>
+
+        <label for="notes">Special Requirements / Notes</label>
+        <textarea id="notes" name="notes" placeholder="Any special requirements"></textarea>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="consent" required> I agree to abide by the rules and regulations of the event.</label>
+            <label><input type="checkbox" name="photos"> I consent to photos/videos being taken for event promotion purposes.</label>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
