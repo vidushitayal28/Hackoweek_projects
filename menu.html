@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spice Villa | Indian Restaurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: #fff8f0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1601050690597-df0568f70950");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #8b0000;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #8b0000;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .menu-category {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item span {
+            font-weight: bold;
+            color: #8b0000;
+        }
+
+        footer {
+            background-color: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Spice Villa</h1>
+    <p>Authentic Indian Flavours</p>
+</header>
+
+<nav>
+    <a href="#starters">Starters</a>
+    <a href="#main">Main Course</a>
+    <a href="#rice">Rice & Breads</a>
+    <a href="#desserts">Desserts</a>
+    <a href="#beverages">Beverages</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="starters">
+    <h2>Starters</h2>
+    <div class="menu-category">
+        <div class="menu-item"><p>Paneer Tikka</p><span>₹280</span></div>
+        <div class="menu-item"><p>Paneer Malai Tikka</p><span>₹300</span></div>
+        <div class="menu-item"><p>Veg Manchurian</p><span>₹220</span></div>
+        <div class="menu-item"><p>Hara Bhara Kabab</p><span>₹240</span></div>
+        <div class="menu-item"><p>Crispy Corn</p><span>₹210</span></div>
+        <div class="menu-item"><p>Cheese Corn Balls</p><span>₹250</span></div>
+        <div class="menu-item"><p>Spring Rolls</p><span>₹230</span></div>
+        <div class="menu-item"><p>Samosa (2 pcs)</p><span>₹120</span></div>
+    </div>
+</section>
+
+<section id="main">
+    <h2>Main Course</h2>
+    <div class="menu-category">
+        <div class="menu-item"><p>Butter Paneer Masala</p><span>₹350</span></div>
+        <div class="menu-item"><p>Shahi Paneer</p><span>₹340</span></div>
+        <div class="menu-item"><p>Kadai Paneer</p><span>₹330</span></div>
+        <div class="menu-item"><p>Paneer Bhurji</p><span>₹320</span></div>
+        <div class="menu-item"><p>Dal Makhani</p><span>₹300</span></div>
+        <div class="menu-item"><p>Dal Tadka</p><span>₹260</span></div>
+        <div class="menu-item"><p>Mix Veg Handi</p><span>₹280</span></div>
+        <div class="menu-item"><p>Veg Kolhapuri</p><span>₹290</span></div>
+    </div>
+</section>
+
+<section id="rice">
+    <h2>Rice & Breads</h2>
+    <div class="menu-category">
+        <div class="menu-item"><p>Plain Rice</p><span>₹150</span></div>
+        <div class="menu-item"><p>Jeera Rice</p><span>₹180</span></div>
+        <div class="menu-item"><p>Veg Pulao</p><span>₹220</span></div>
+        <div class="menu-item"><p>Veg Biryani</p><span>₹280</span></div>
+        <div class="menu-item"><p>Butter Naan</p><span>₹60</span></div>
+        <div class="menu-item"><p>Garlic Naan</p><span>₹80</span></div>
+        <div class="menu-item"><p>Tandoori Roti</p><span>₹40</span></div>
+        <div class="menu-item"><p>Lachha Paratha</p><span>₹70</span></div>
+    </div>
+</section>
+
+<section id="desserts">
+    <h2>Desserts</h2>
+    <div class="menu-category">
+        <div class="menu-item"><p>Gulab Jamun</p><span>₹120</span></div>
+        <div class="menu-item"><p>Rasmalai</p><span>₹150</span></div>
+        <div class="menu-item"><p>Gajar Ka Halwa</p><span>₹160</span></div>
+        <div class="menu-item"><p>Kulfi (Malai / Kesar)</p><span>₹100</span></div>
+        <div class="menu-item"><p>Brownie with Ice Cream</p><span>₹190</span></div>
+    </div>
+</section>
+
+<section id="beverages">
+    <h2>Beverages</h2>
+    <div class="menu-category">
+        <div class="menu-item"><p>Masala Chaas</p><span>₹70</span></div>
+        <div class="menu-item"><p>Sweet Lassi</p><span>₹120</span></div>
+        <div class="menu-item"><p>Mango Lassi</p><span>₹140</span></div>
+        <div class="menu-item"><p>Cold Coffee</p><span>₹150</span></div>
+        <div class="menu-item"><p>Fresh Lime Soda</p><span>₹90</span></div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center;">
+        📍 Nagpur, Maharashtra <br><br>
+        📞 +91 98765 43210 <br><br>
+        ⏰ Open: 11:00 AM – 11:00 PM
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Spice Villa | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
