@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ElectroMart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+}
+header {
+    background: linear-gradient(90deg, #0f172a, #020617);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+.product {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+.product h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+.price {
+    color: #16a34a;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1e40af;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #555;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ElectroMart</h1>
+    <p>Electronics Store</p>
+</header>
+
+<div class="container">
+<div class="products">
+
+<div class="product">
+<img src="https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-Wireless-Headphones-Front-Left-Angled-View-Black.jpg?v=1709896228">
+<h3>Wireless Headphones</h3>
+<div class="price">₹1,499</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://istarmax.com/wp-content/uploads/2024/01/gts7-pro-smart-watch-view-6-en-jpg.webp">
+<h3>Smart Watch</h3>
+<div class="price">₹1,999</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://x.imastudent.com/content/0061615_jbl-boombox-3-portable-bluetooth-speaker_500.png">
+<h3>Bluetooth Speaker</h3>
+<div class="price">₹1,799</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://www.lapcare.com/cdn/shop/files/1_ae0564f7-bc59-4fd8-b65d-8d1bb583f088.webp?v=1757326645&width=2048">
+<h3>Power Bank</h3>
+<div class="price">₹1,299</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://www.power-x.in/cdn/shop/files/sleekrise-w70-wireless-mousepowerx-the-technology-people-601579.jpg?v=1739959777&width=3000">
+<h3>Wireless Mouse</h3>
+<div class="price">₹499</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://m.media-amazon.com/images/I/61p0FNps3XL.jpg">
+<h3>USB Keyboard</h3>
+<div class="price">₹799</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://shopbucket.in/cdn/shop/files/11_3.png?v=1756726823">
+<h3>Fast Charger</h3>
+<div class="price">₹1199</div>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&q=60">
+<h3>Wireless Earbuds</h3>
+<div class="price">₹1,199</div>
+<button>Add to Cart</button>
+</div>
+
+</div>
+</div>
+
+<footer>
+    © 2026 ElectroMart. All Rights Reserved.
+</footer>
+
+</body>
+</html>
