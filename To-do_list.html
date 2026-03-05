@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calm Task Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#d7e1ec,#f0f4f8);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+width:900px;
+height:600px;
+background:white;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.15);
+display:flex;
+overflow:hidden;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:230px;
+background:#6c8fb3;
+color:white;
+padding:30px;
+}
+
+.sidebar h2{
+margin-bottom:25px;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar li{
+margin:15px 0;
+cursor:pointer;
+transition:0.3s;
+}
+
+.sidebar li:hover{
+transform:translateX(6px);
+}
+
+/* Main section */
+
+.main{
+flex:1;
+padding:30px;
+overflow-y:auto;
+}
+
+.section{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.addTask{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.addTask input{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+}
+
+button{
+background:#6c8fb3;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#557799;
+}
+
+/* Tasks */
+
+.task{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px;
+border-radius:10px;
+background:#f4f6fa;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+.task:hover{
+background:#e7edf5;
+}
+
+.completed{
+text-decoration:line-through;
+opacity:0.6;
+}
+
+.timeline{
+margin-top:20px;
+}
+
+.event{
+padding-left:15px;
+border-left:3px solid #6c8fb3;
+margin-bottom:15px;
+}
+
+.time{
+font-size:12px;
+color:gray;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>My Planner</h2>
+
+<ul>
+<li onclick="showSection('tasks')">Today's Tasks</li>
+<li onclick="showSection('timeline')">Timeline</li>
+<li onclick="showSection('completed')">Completed</li>
+</ul>
+
+</div>
+
+<div class="main">
+
+<!-- TASK SECTION -->
+
+<div id="tasks" class="section active">
+
+<div class="header">
+<h1>Today's Tasks</h1>
+<input type="date">
+</div>
+
+<div class="addTask">
+<input id="taskInput" type="text" placeholder="Add new task">
+<input id="timeInput" type="time">
+<button onclick="addTask()">Add</button>
+</div>
+
+<div id="taskList"></div>
+
+</div>
+
+<!-- TIMELINE -->
+
+<div id="timeline" class="section">
+
+<h1>Today's Timeline</h1>
+
+<div id="timelineList" class="timeline"></div>
+
+</div>
+
+<!-- COMPLETED -->
+
+<div id="completed" class="section">
+
+<h1>Completed Tasks</h1>
+
+<div id="completedList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showSection(section){
+
+document.querySelectorAll(".section").forEach(sec=>{
+sec.classList.remove("active");
+});
+
+document.getElementById(section).classList.add("active");
+
+}
+
+/* Add Task */
+
+function addTask(){
+
+let taskText=document.getElementById("taskInput").value;
+let time=document.getElementById("timeInput").value;
+
+if(taskText==="") return;
+
+let taskDiv=document.createElement("div");
+taskDiv.className="task";
+
+taskDiv.innerHTML=`
+<label>
+<input type="checkbox" onchange="completeTask(this)">
+${taskText}
+</label>
+<span>${time}</span>
+`;
+
+document.getElementById("taskList").appendChild(taskDiv);
+
+/* Timeline */
+
+let timeline=document.createElement("div");
+timeline.className="event";
+timeline.innerHTML=`
+<div class="time">${time}</div>
+<p>${taskText}</p>
+`;
+
+document.getElementById("timelineList").appendChild(timeline);
+
+document.getElementById("taskInput").value="";
+document.getElementById("timeInput").value="";
+
+}
+
+/* Complete Task */
+
+function completeTask(checkbox){
+
+let task=checkbox.closest(".task");
+
+task.classList.add("completed");
+
+document.getElementById("completedList").appendChild(task);
+
+}
+
+</script>
+
+</body>
+</html>
