@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeLearn App</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0f172a;color:#fff;}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#020617;}
+.logo{color:#38bdf8;font-weight:600;font-size:20px;}
+
+.layout{display:flex;min-height:100vh;}
+
+.sidebar{
+  width:220px;background:#020617;padding:20px;
+}
+
+.sidebar button{
+  display:block;width:100%;margin:10px 0;padding:10px;
+  background:none;border:none;color:#fff;text-align:left;cursor:pointer;
+}
+
+.sidebar button:hover{color:#38bdf8;}
+
+.main{
+  flex:1;padding:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;border-radius:12px;margin-bottom:20px;
+}
+
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;
+}
+
+.btn{
+  padding:10px 20px;border:none;border-radius:8px;
+  background:#38bdf8;color:#000;font-weight:600;cursor:pointer;margin-top:10px;
+}
+
+input{
+  width:100%;padding:10px;margin:8px 0;border-radius:8px;border:none;
+}
+
+.progress-bar{background:#1e293b;border-radius:10px;overflow:hidden;}
+.progress{height:8px;background:#38bdf8;}
+
+.hidden{display:none;}
+
+@media(max-width:768px){
+  .layout{flex-direction:column;}
+  .sidebar{width:100%;display:flex;overflow-x:auto;}
+  .sidebar button{flex:1;text-align:center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CodeLearn App</div>
+</header>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <button onclick="showPage('dashboard')">Dashboard</button>
+  <button onclick="showPage('courses')">Courses</button>
+  <button onclick="showPage('profile')">Profile</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <h2>Welcome 👋</h2>
+  <div class="card">Track your learning and progress here.</div>
+</div>
+
+<!-- COURSES -->
+<div id="courses" class="hidden">
+  <h2>Courses</h2>
+  <div class="grid">
+    <div class="card"><h3>Python</h3><p>AI & Automation</p><button class="btn" onclick="enroll('Python')">Enroll</button></div>
+    <div class="card"><h3>C</h3><p>Programming Basics</p><button class="btn" onclick="enroll('C')">Enroll</button></div>
+    <div class="card"><h3>C++</h3><p>DSA & OOP</p><button class="btn" onclick="enroll('C++')">Enroll</button></div>
+    <div class="card"><h3>Java</h3><p>Backend Dev</p><button class="btn" onclick="enroll('Java')">Enroll</button></div>
+    <div class="card"><h3>JavaScript</h3><p>Web Development</p><button class="btn" onclick="enroll('JavaScript')">Enroll</button></div>
+    <div class="card"><h3>HTML & CSS</h3><p>Frontend Basics</p><button class="btn" onclick="enroll('HTML & CSS')">Enroll</button></div>
+    <div class="card"><h3>React</h3><p>Frontend Framework</p><button class="btn" onclick="enroll('React')">Enroll</button></div>
+    <div class="card"><h3>Node.js</h3><p>Backend with JS</p><button class="btn" onclick="enroll('Node.js')">Enroll</button></div>
+    <div class="card"><h3>MongoDB</h3><p>NoSQL Database</p><button class="btn" onclick="enroll('MongoDB')">Enroll</button></div>
+    <div class="card"><h3>SQL</h3><p>Database Queries</p><button class="btn" onclick="enroll('SQL')">Enroll</button></div>
+    <div class="card"><h3>Data Structures</h3><p>Core DSA Concepts</p><button class="btn" onclick="enroll('DSA')">Enroll</button></div>
+    <div class="card"><h3>Machine Learning</h3><p>ML Algorithms</p><button class="btn" onclick="enroll('Machine Learning')">Enroll</button></div>
+    <div class="card"><h3>Deep Learning</h3><p>Neural Networks</p><button class="btn" onclick="enroll('Deep Learning')">Enroll</button></div>
+    <div class="card"><h3>Cyber Security</h3><p>Ethical Hacking</p><button class="btn" onclick="enroll('Cyber Security')">Enroll</button></div>
+    <div class="card"><h3>Cloud Computing</h3><p>AWS & Azure</p><button class="btn" onclick="enroll('Cloud')">Enroll</button></div>
+    <div class="card"><h3>Git & GitHub</h3><p>Version Control</p><button class="btn" onclick="enroll('Git')">Enroll</button></div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="hidden">
+  <h2>Your Profile</h2>
+
+  <div class="card">
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <button class="btn" onclick="saveProfile()">Save Profile</button>
+  </div>
+
+  <div class="card">
+    <h3 id="displayName">User Name</h3>
+    <p id="displayEmail">email@example.com</p>
+
+    <h4 style="margin-top:10px;">Enrolled Courses:</h4>
+    <ul id="courseList"></ul>
+
+    <h4 style="margin-top:10px;">Progress</h4>
+    <div class="progress-bar"><div id="progressBar" class="progress" style="width:0%"></div></div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script>
+function showPage(page){
+  document.querySelectorAll('.main > div').forEach(div=>div.classList.add('hidden'));
+  document.getElementById(page).classList.remove('hidden');
+}
+
+function saveProfile(){
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+
+  localStorage.setItem('name',name);
+  localStorage.setItem('email',email);
+
+  loadProfile();
+}
+
+function enroll(course){
+  let courses=JSON.parse(localStorage.getItem('courses')) || [];
+  if(!courses.includes(course)) courses.push(course);
+  localStorage.setItem('courses',JSON.stringify(courses));
+  loadProfile();
+}
+
+function loadProfile(){
+  const name=localStorage.getItem('name');
+  const email=localStorage.getItem('email');
+  const courses=JSON.parse(localStorage.getItem('courses')) || [];
+
+  if(name) document.getElementById('displayName').innerText=name;
+  if(email) document.getElementById('displayEmail').innerText=email;
+
+  const list=document.getElementById('courseList');
+  list.innerHTML='';
+  courses.forEach(c=>{
+    const li=document.createElement('li');
+    li.innerText=c;
+    list.appendChild(li);
+  });
+
+  document.getElementById('progressBar').style.width=(courses.length*30)+'%';
+}
+
+window.onload=loadProfile;
+</script>
+
+</body>
+</html>
