@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Browser History (Stack)</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #eef2ff, #fdf4ff);
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 20px 40px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* MAIN */
+.container {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg, #6366f1, #7c3aed);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* STACK DISPLAY */
+.stack {
+    margin-top: 15px;
+}
+
+.stack-item {
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+/* CURRENT PAGE */
+.current {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e0e7ff;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>🌐 Browser History (Stack Simulation)</header>
+
+<div class="container">
+
+    <!-- VISIT -->
+    <div class="card">
+        <h3>Visit New Page</h3>
+        <input type="text" id="url" placeholder="Enter URL (e.g. google.com)">
+        
+        <button onclick="visit()">Visit</button>
+
+        <div class="nav-buttons">
+            <button onclick="goBack()">⬅ Back</button>
+            <button onclick="goForward()">Forward ➡</button>
+        </div>
+
+        <div class="current" id="currentPage">
+            Current Page: None
+        </div>
+    </div>
+
+    <!-- BACK STACK -->
+    <div class="card">
+        <h3>Back Stack</h3>
+        <div id="backStack" class="stack"></div>
+    </div>
+
+    <!-- FORWARD STACK -->
+    <div class="card">
+        <h3>Forward Stack</h3>
+        <div id="forwardStack" class="stack"></div>
+    </div>
+
+</div>
+
+<script>
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    push(item) {
+        this.items.push(item);
+    }
+
+    pop() {
+        return this.items.pop();
+    }
+
+    peek() {
+        return this.items[this.items.length - 1];
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    clear() {
+        this.items = [];
+    }
+}
+
+const backStack = new Stack();
+const forwardStack = new Stack();
+
+/* VISIT */
+function visit() {
+    const url = document.getElementById("url").value;
+
+    if (!url) return;
+
+    if (!backStack.isEmpty()) {
+        forwardStack.clear(); // new visit clears forward history
+    }
+
+    backStack.push(url);
+    render();
+}
+
+/* BACK */
+function goBack() {
+    if (backStack.items.length <= 1) return;
+
+    const current = backStack.pop();
+    forwardStack.push(current);
+
+    render();
+}
+
+/* FORWARD */
+function goForward() {
+    if (forwardStack.isEmpty()) return;
+
+    const page = forwardStack.pop();
+    backStack.push(page);
+
+    render();
+}
+
+/* RENDER */
+function render() {
+    const backDiv = document.getElementById("backStack");
+    const forwardDiv = document.getElementById("forwardStack");
+    const currentDiv = document.getElementById("currentPage");
+
+    backDiv.innerHTML = "";
+    forwardDiv.innerHTML = "";
+
+    backStack.items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "stack-item";
+        div.innerText = item;
+        backDiv.appendChild(div);
+    });
+
+    forwardStack.items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "stack-item";
+        div.innerText = item;
+        forwardDiv.appendChild(div);
+    });
+
+    currentDiv.innerText = "Current Page: " + (backStack.peek() || "None");
+}
+</script>
+
+</body>
+</html>
