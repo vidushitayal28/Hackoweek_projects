@@ -267,3 +267,140 @@ window.onload = () => displayBooks(books);
 
 </body>
 </html>
+
+
+A PROJECT REPORT
+ON
+Advanced Library System
+
+A project report submitted in partial fulfillment of the requirements for the degree of Bachelor of Technology in Computer Science and Engineering
+
+
+BACHELOR OF TECHNOLOGY
+COMPUTER SCIENCE AND ENGINEERING
+
+Submitted By
+Vidushi Tayal
+PRN: 25070521075 
+
+UNDER THE GUIDANCE OF
+Prof. Dr. Piyush Chauhan
+
+
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+AY 2025-26
+
+
+
+
+
+
+
+
+CERTIFICATE
+
+This is to certify that the Project work entitled “Advanced Library System” is carried out by Vidushi Tayal, in partial fulfillment for the award of the degree of Bachelor of Technology in Computer Science and Engineering, Symbiosis International (Deemed University), Pune during the academic year 2025-2026.
+
+
+Name of Mentor
+Designation
+
+
+
+
+Dr. Gaurav Londhe
+Associate Professor
+Hack-O-Week In-Charge 
+
+
+
+Dr. Sagar Kumar Badhiye
+HoD, Dept. of CSE, 
+SIT Nagpur
+
+
+
+Dr. Bhupesh Kumar Dewangan
+Associate Professor, 
+IPR Co-ordinator
+
+DECLARATION
+
+I hereby declare that the project titled “Advanced Library system” submitted to Symbiosis Institute of Technology, Constituent of Symbiosis International (Deemed University) Pune for the award of the degree of Bachelor of Technology in Computer Science and Engineering is a result of original research carried out by me. I understand that my report may be made electronically available to the public. It is further declared that the project report or any part thereof has not been previously submitted to any University or Institute for the award of any degree or diploma.
+Name(s) of All Student(s) Vidushi Tayal [25070521075]
+                                              Anushka Sarode [25070521076]
+                                              Nupur Radke [25070521074]
+	: 	
+ABSTRACT
+The Advanced Library System is a web-based application designed to efficiently manage a small-scale digital book catalog. The system allows users to add, edit, delete, and search books dynamically while maintaining a storage limit. The project focuses on usability, responsiveness, and modern UI design using HTML, CSS, and JavaScript.
+The system utilizes browser local storage for persistent data handling without requiring a backend server. It ensures a smooth user experience through interactive UI elements and real-time search functionality. This project demonstrates the practical implementation of front-end technologies in building functional and user-friendly applications.
+Keywords: Library System, Web Development, Local Storage, JavaScript, UI/UX
+
+TABLE OF CONTENTS
+Chapter 1: Background and Technical Overview
+Chapter 2: Problem Statement and Motivation
+Chapter 3: Novelty and Innovative Contributions
+Chapter 4: Technical Advantages and Practical Usefulness
+Chapter 5: Detailed Methodology / System Architecture
+Chapter 6: Prior Art and Related Work
+Chapter 7: Applications and Deployment Areas
+Chapter 8: Conclusion and Future Scope
+
+CHAPTER 1: BACKGROUND AND TECHNICAL OVERVIEW
+The increasing need for efficient management of books has led to the development of digital library systems. Traditional systems are often manual and inefficient. The Advanced Library System provides a lightweight, browser-based solution.
+Technologies Used:
+•	HTML for structure
+•	CSS for styling and responsive UI
+•	JavaScript for functionality
+•	Local Storage for data persistence
+________________________________________
+CHAPTER 2: PROBLEM STATEMENT AND MOTIVATION
+Managing books manually can lead to data loss, inefficiency, and lack of organization. The motivation behind this project is to create a simple yet efficient system that allows users to manage a limited set of books digitally.
+________________________________________
+CHAPTER 3: NOVELTY AND INNOVATIVE CONTRIBUTIONS
+•	Modern glassmorphism UI design
+•	Real-time search functionality
+•	Local storage-based persistence without backend
+•	Capacity-limited system for controlled data handling
+________________________________________
+CHAPTER 4: TECHNICAL ADVANTAGES AND PRACTICAL USEFULNESS
+•	Easy to use and interactive interface
+•	No server required
+•	Lightweight and fast performance
+•	Cross-platform compatibility
+________________________________________
+CHAPTER 5: DETAILED METHODOLOGY / SYSTEM ARCHITECTURE
+The system consists of three main modules:
+1.	Input Module: Accepts book details (title, author, category)
+2.	Processing Module: Handles add, edit, delete, and search operations
+3.	Storage Module: Uses localStorage to store data
+Workflow:
+User Input → JavaScript Processing → Local Storage → Display Output
+________________________________________
+CHAPTER 6: PRIOR ART AND RELATED WORK
+Existing library systems often require databases and backend frameworks. This project differs by implementing a frontend-only solution using browser storage.
+________________________________________
+CHAPTER 7: APPLICATIONS AND DEPLOYMENT AREAS
+•	Personal book management
+•	Small libraries
+•	Educational projects
+•	Prototype systems
+________________________________________
+CHAPTER 8: CONCLUSION AND FUTURE SCOPE
+The Advanced Library System successfully demonstrates a functional web-based catalog system. It is efficient, user-friendly, and easy to deploy.
+Future Enhancements:
+•	Add login system
+•	Increase storage capacity
+•	Cloud integration
+•	Mobile app version
+________________________________________
+REFERENCES
+[1] MDN Web Docs – JavaScript
+[2] W3Schools – HTML, CSS, JS Tutorials
+[3] Google Fonts Documentation
+________________________________________
+APPENDICES
+•	Source Code
+•	Screenshots
+
+
